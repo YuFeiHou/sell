@@ -1,0 +1,45 @@
+#数据库连接
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/wechatorder?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+  jpa:
+    show-sql: true
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+
+#在controller层中的业务访问路径
+server:
+  servlet:
+    context-path: /sell
+
+wechat:
+  mpAppId: wxb4ed112b6a7fbb4a
+  mpAppSecret: 5cef96e4b832898126fb5e6a899f2bc0
+  mchId:
+  mchKey:
+  keyPath:
+  notifyUrl:
+#  微信开发平台id
+  openAppId:
+#  微信开放平台秘钥
+  openAppSecret:
+#  微信模板
+  templateId:
+    orderStatus: Z7q6GQuig3lXqh6703ZQqoyoXcdl77t2YIZkleTCNHw
+
+
+#回调地址的使用
+projecturl:
+  wechatMpAuthorize: http://r9rkvd.natappfree.cc
+  wechatOpenAuthorize: http://r9rkvd.natappfree.cc
+  sell: http://r9rkvd.natappfree.cc
+
+
+

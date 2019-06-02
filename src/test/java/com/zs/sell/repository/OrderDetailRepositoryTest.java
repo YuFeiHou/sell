@@ -78,10 +78,52 @@ public class OrderDetailRepositoryTest {
     @Test
     public void deleteById() {
 
-        orderDetailRepository.deleteById("123123");
+        orderDetailRepository.deleteById("3333");
 //        orderDetailRepository.deleteByOrderId("123456");
     }
 
+
+    @Test
+    public void findOne() {
+        List<OrderDetail> orderDetailList = orderDetailRepository.getByOrderId("123456");
+        for(OrderDetail o :orderDetailList){
+            System.out.println(JsonUtil.toJson(o));
+        }
+    }
+
+
+    @Test
+    public void findOne1() {
+        //getOne返回的是一个对象的指针或引用 动态代理(一般不使用)
+        OrderDetail orderDetailList = orderDetailRepository.getOne("123456");
+        System.out.println(orderDetailList.toString());
+    }
+
+    @Test
+    public void findOne2() {
+        List<OrderDetail> orderDetailList = orderDetailRepository.queryByOrderId("123456");
+        for(OrderDetail o :orderDetailList){
+            System.out.println(JsonUtil.toJson(o));
+        }
+    }
+
+    @Test
+    public void findOne3() {
+        List<OrderDetail> orderDetailList = orderDetailRepository.findByOrderIdOrProductId("123456","956434");
+        for(OrderDetail o :orderDetailList){
+            System.out.println(JsonUtil.toJson(o));
+        }
+    }
+
+    @Test
+    public void update() {
+        orderDetailRepository.updateByOrderId("123456","123456");
+    }
+
+    @Test
+    public void delete(){
+        orderDetailRepository.deleteByOrderId("123456");
+    }
 
 
 }
